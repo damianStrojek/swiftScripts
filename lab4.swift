@@ -1,5 +1,6 @@
 // Damian Strojek
 // Stackoverflow "implementation"
+// TO-DO: add support for JSON files (i guess lol)
 import Foundation
 
 enum Category: String {
@@ -60,13 +61,13 @@ struct User {
 
 func printInformation(_ user: User){
     print("User with username \(user.nickName) posted \(user.post.name) on \(user.post.publishedDate). Number of votes: \(user.post.audience.numberOfVotes), number of answers: \(user.post.audience.numberOfAnswers) and number of viewers: \(user.post.audience.numberOfViews).")
-    /*
-    if let test = user.post as? [Question] {
-        print("hurraaa")
+    
+    if user.post is Question {
+        print("The type of post is question.")
     }
     else{
-        print("nie hurraaa")
-    }*/
+        print("The type of post is theory.")
+    }
 }
 
 var users = [User]()
